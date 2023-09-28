@@ -1,12 +1,19 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo3 from "../Logo3.png"
 import Fast_Fashion_logo2 from "../Fast_Fashion_logo2.png"
+
+import React from "react";
+import { Link } from "react-router-dom";
+
+
 export const Navbar = () => {
 
   
 
   return (
+
     <div style={{display:"flex", alignItems:"center", flexDirection:"flexStart",   border:"1px solid red",width:"99%" ,margin:"auto",height:"100px" }}  >
       <div>
        <Link to={"/"}  >  
@@ -25,6 +32,22 @@ export const Navbar = () => {
         <Link to={"/contact"}  style={{textDecoration:"none",  color:"black" }}  >CONTACT</Link>
         </div> 
 
+
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "flexStart",
+        gap: "30px",
+        marginLeft: "50px",
+      }}
+    >
+      <Link to={"/"}>Home</Link>
+      <Link to={"/about"}>About</Link>
+      <Link to={"/men"}>Men</Link>
+      <Link to={"/women"}>Women</Link>
+      <Link to={"/shop"}>Shop</Link>
+      <Link to={"/contact"}>Contact</Link>
+
     </div>
-  )
-}
+  );
+};

@@ -1,3 +1,4 @@
+
 import logo from './logo.svg';
 import './App.css';
 import { Navbar } from './components/Navbar';
@@ -5,9 +6,15 @@ import { MainRoutes } from './components/MainRoutes';
 import Logo3 from "./Logo3.png"
 import { Link } from 'react-router-dom';
 
+import "./App.css";
+import { Navbar } from "./components/Navbar";
+import { MainRoutes } from "./components/MainRoutes";
+
+
 function App() {
   return (
     <div className="App">
+
       <Navbar/>
       <MainRoutes/>
 
@@ -59,6 +66,10 @@ function App() {
 
       </div>
 
+
+
+      <Navbar />
+      <MainRoutes />
 
     </div>
   );
