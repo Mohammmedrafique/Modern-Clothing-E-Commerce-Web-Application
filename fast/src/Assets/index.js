@@ -1,2 +1,3 @@
 import fastlogo from "./Fastlogo.png";
-export { fastlogo };
+import Logo3 from "./Logo3.png";
+export { fastlogo, Logo3 };
