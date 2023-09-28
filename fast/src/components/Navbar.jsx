@@ -51,22 +51,6 @@ export const Navbar = () => {
           CONTACT
         </Link>
       </div>
-
-      {/* <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          gap: "30px",
-          marginLeft: "50px",
-        }}
-      >
-        <Link to={"/"}>Home</Link>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/men"}>Men</Link>
-        <Link to={"/women"}>Women</Link>
-        <Link to={"/shop"}>Shop</Link>
-        <Link to={"/contact"}>Contact</Link>
-      </div> */}
     </div>
   );
 };
