@@ -32,7 +32,11 @@ const Header = () => {
               0
             </span>
           </div>
-          <img className="w-10" src={githublogo} alt="userlogo" />
+          <img
+            className="w-10 h-8 rounded-full"
+            src={githublogo}
+            alt="userlogo"
+          />
         </div>
       </div>
     </div>
