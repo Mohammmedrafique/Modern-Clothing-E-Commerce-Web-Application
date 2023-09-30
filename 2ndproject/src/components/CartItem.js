@@ -30,7 +30,7 @@ const CartItem = () => {
               />
               <img
                 className="w-32 h-32 object-cover"
-                src="{item.image}"
+                src={item.image}
                 alt="productImg"
               />
             </div>
