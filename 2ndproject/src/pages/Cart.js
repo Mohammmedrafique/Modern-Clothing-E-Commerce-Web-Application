@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
-import blue from "../../public/blue.png";
+import blue from "../blue.png";
 import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
