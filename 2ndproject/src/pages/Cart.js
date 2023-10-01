@@ -16,7 +16,7 @@ const Cart = () => {
       return price 
     })
 
-    setTotalAmt(price)
+    setTotalAmt(price.toFixed(2))
 
   },[productData])
   return (

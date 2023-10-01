@@ -11,7 +11,7 @@ export const bazarSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       console.log(typeof state.productData,"state")
-      const item = state.productData.find((item) => item._id === action.payload._id);
+      const item = state.productData.length>0 && state.productData.find((item) => item._id === action.payload._id);
 
       if (item) {
         item.quantity += action.payload.quantity;
@@ -22,6 +22,8 @@ export const bazarSlice = createSlice({
       
       //state.productData = action.payload;
     },
+
+    
 
     deleteItem: (state, action) => {
       state.productData = state.productData.filter(

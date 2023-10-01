@@ -13,14 +13,14 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
-}
+// const persistConfig = {
+//   key: 'root',
+//   version: 1,
+//   storage,
+// }
 
 
-const persistedReducer = persistReducer(persistConfig, bazarReducer)
+//const persistedReducer = persistReducer(persistConfig, bazarReducer)
 
 export const store = configureStore({
   // reducer: {bazar : persistedReducer},
