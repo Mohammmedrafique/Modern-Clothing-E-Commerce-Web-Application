@@ -8,6 +8,7 @@ import axios from "axios";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
+
   const userInfo = useSelector((state) => state.bazar.userInfo);
   // console.log(productData, "productData");
   const [totalAmt, setTotalAmt] = useState("");
