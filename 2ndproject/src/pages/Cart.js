@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
+  const userInfo=useSelector((store)=>store.bazar.userInfo)
   console.log(productData,"productData");
   const [totalAmt,setTotalAmt]=useState("");
 

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
+import {Login} from "./pages/Login";
 
 import { productsData } from "./api/Api";
 import Product from "./components/Product";
@@ -50,7 +51,10 @@ const router=createBrowserRouter([
         element:<Shop/>,
         loader: productsData,
 
-      },
+      },{
+        path:"/login",
+        element:<Login/>
+      }
     ],
   },
 ])

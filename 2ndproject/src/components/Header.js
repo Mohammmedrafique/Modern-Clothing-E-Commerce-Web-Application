@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const productData=useSelector((state)=>state.bazar.productData)
+  const userInfo=useSelector((store)=>store.bazar.userInfo)
   console.log(productData)
+  console.log(userInfo)
+  
   return (
     <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont">
       <div className="max-w-screen-xl h-full mx-auto flex items-center justify-between">
@@ -44,11 +47,17 @@ const Header = () => {
             </span>
           </div>
           </Link>
+          <Link to="/login">
           <img
             className="w-10 h-8 rounded-full"
-            src={githublogo}
+            src={userInfo?userInfo.image:githublogo}
             alt="userlogo"
           />
+          </Link>
+
+          {
+            userInfo&& <p className="text-base font-titleFont font-semibold underline underline-offset-2">{userInfo.name}</p>
+          }
         </div>
       </div>
      
