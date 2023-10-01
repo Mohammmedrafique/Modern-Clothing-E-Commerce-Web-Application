@@ -1,9 +1,15 @@
 import React from "react";
 import { MdOutlineClose } from "react-icons/md";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, decrementQuantity, deleteItem,incrementQuantity,resetCart } from "../redux/bazarSlice";
+import {
+  addToCart,
+  decrementQuantity,
+  deleteItem,
+  incrementQuantity,
+  resetCart,
+} from "../redux/bazarSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 const CartItem = () => {
@@ -18,7 +24,7 @@ const CartItem = () => {
       <div>
         {productData.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className="flex items-center justify-between gap-6 mt-6">
             <div className="flex items-center gap-2">
               <MdOutlineClose
@@ -36,51 +42,55 @@ const CartItem = () => {
             </div>
             <h2 className="w-52">{item.title}</h2>
             <p className="w-10">${item.price}</p>
-            {/* <p className="text-sm">Quantity</p> */}
-           
-                        <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
-                            <p className="text-sm">Quantity</p>
-                            <div className="flex items-center gap-4 text-sm font-semibold">
-                            <span 
-                            onClick={()=>dispatch(decrementQuantity({
-                              _id: item._id,
-                              title: item.title,
-                              image: item.image,
-                              price: item.price,
-                              quantity: 1,
-                              description: item.description,
-                            }))}
-                             className="border h-5 font-normal text-lg flex items-center
-                             justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer
-                             duration-300 active:bg-black">
-                                -
-                                </span>
-                            {item.quantity}
-                            <span
-                            //  onClick={()=>setBaseQty(baseQty+1)}
-                            onClick={()=>dispatch(incrementQuantity({
-                              _id: item._id,
-                              title: item.title,
-                              image: item.image,
-                              price: item.price,
-                              quantity: 1,
-                              description: item.description,
-                            }))} 
-                             className="border h-5 font-normal text-lg flex items-center
-                             justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer
-                             duration-300 active:bg-black">
-                                +
-                            </span>
-                            </div>
-                            
-                        </div>
 
-                        <p className="w-14" >${item.quantity * item.price}</p>
-                        
-                   
+            <div className="w-52 flex items-center justify-between text-gray-500 gap-4 border p-3">
+              <p className="text-sm">Quantity</p>
+              <div className="flex items-center gap-4 text-sm font-semibold">
+                <span
+                  onClick={() =>
+                    dispatch(
+                      decrementQuantity({
+                        _id: item._id,
+                        title: item.title,
+                        image: item.image,
+                        price: item.price,
+                        quantity: 1,
+                        description: item.description,
+                      })
+                    )
+                  }
+                  className="border h-5 font-normal text-lg flex items-center
+                             justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer
+                             duration-300 active:bg-black">
+                  -
+                </span>
+                {item.quantity}
+                <span
+                  //  onClick={()=>setBaseQty(baseQty+1)}
+                  onClick={() =>
+                    dispatch(
+                      incrementQuantity({
+                        _id: item._id,
+                        title: item.title,
+                        image: item.image,
+                        price: item.price,
+                        quantity: 1,
+                        description: item.description,
+                      })
+                    )
+                  }
+                  className="border h-5 font-normal text-lg flex items-center
+                             justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer
+                             duration-300 active:bg-black">
+                  +
+                </span>
+              </div>
+            </div>
+            <p className="w-14">${item.quantity * item.price}</p>
           </div>
         ))}
       </div>
+
       <button
         onClick={() =>
           dispatch(resetCart()) & toast.error("Your Cart is Empty!")
