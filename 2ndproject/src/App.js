@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Cart from "./pages/Cart";
+import Shop from "./pages/Shop";
 
 import { productsData } from "./api/Api";
 import Product from "./components/Product";
@@ -43,6 +44,12 @@ const router=createBrowserRouter([
       {
         path:"/cart",
         element:<Cart/>,
+      },
+      {
+        path:"/shop",
+        element:<Shop/>,
+        loader: productsData,
+
       },
     ],
   },
