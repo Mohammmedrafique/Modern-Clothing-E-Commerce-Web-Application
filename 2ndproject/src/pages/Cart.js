@@ -5,6 +5,7 @@ import CartItem from "../components/CartItem";
 import { ToastContainer, toast } from "react-toastify";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
@@ -13,6 +14,8 @@ const Cart = () => {
   // console.log(productData, "productData");
   const [totalAmt, setTotalAmt] = useState("");
   const [payNow, setPayNow] = useState(false);
+
+  const nav = useNavigate();
 
   useEffect(() => {
     let price = 0;
@@ -32,12 +35,16 @@ const Cart = () => {
     }
   };
 
-  const payment = async (token) => {
-    await axios.post("http://localhost:8000/pay",{
-      amount:totalAmt * 100,
-      token:token,
-    });
+  const payment = (token) => {
+    alert(`Paymeny Successfull`);
+    nav(`/shop`);
   };
+  // const payment = async (token) => {
+  //   await axios.post("http://localhost:8000/pay",{
+  //     amount:totalAmt * 100,
+  //     token:token,
+  //   });
+  // };
 
   return (
     <div>
@@ -69,8 +76,9 @@ const Cart = () => {
           <p className="font-titleFont font-semibold flex justify-between mt-6">
             Total <span className="text-xl font-bold">${totalAmt}</span>
           </p>
-          <button  onClick={handleCheckout}
-          className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-grey-800 duration-300">
+          <button
+            onClick={handleCheckout}
+            className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-grey-800 duration-300">
             proceed to checkout
           </button>
 
