@@ -1,25 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
-import blue from "../blue.png";
+// import blue from "../blue.png";
 import { ToastContainer, toast } from "react-toastify";
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
-  const userInfo=useSelector((store)=>store.bazar.userInfo)
-  console.log(productData,"productData");
-  const [totalAmt,setTotalAmt]=useState("");
 
-  useEffect(()=>{
+  const userInfo = useSelector((state) => state.bazar.userInfo);
+  // console.log(productData, "productData");
+  const [totalAmt, setTotalAmt] = useState("");
+  const [payNow, setPayNow] = useState(false);
+
+  useEffect(() => {
     let price = 0;
-    productData.map((item)=>{
+    productData.map((item) => {
       price += item.price * item.quantity;
-      return price 
-    })
+      return price;
+    });
 
-    setTotalAmt(price.toFixed(2))
+    setTotalAmt(price.toFixed(2));
+  }, [productData]);
 
-  },[productData])
+  const handleCheckout = () => {
+    if (userInfo) {
+      setPayNow(true);
+    } else {
+      toast.error("Please sign in to Checkout");
+    }
+  };
+
+  const payment = async (token) => {
+    await axios.post("http://localhost:8000/pay",{
+      amount:totalAmt * 100,
+      token:token,
+    });
+  };
+
   return (
     <div>
       <img
@@ -35,7 +54,9 @@ const Cart = () => {
             <h2 className="text-2xl font-medium">cart totals</h2>
             <p className="flex items-center gap-4 text-base">
               Subtotal{" "}
-              <span className="font-titleFont font-bold text-lg">${totalAmt}</span>
+              <span className="font-titleFont font-bold text-lg">
+                ${totalAmt}
+              </span>
             </p>
             <p className="flex items-start gap-4 text-base">
               Shipping{" "}
@@ -48,11 +69,38 @@ const Cart = () => {
           <p className="font-titleFont font-semibold flex justify-between mt-6">
             Total <span className="text-xl font-bold">${totalAmt}</span>
           </p>
-          <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-grey-800 duration-300">
+          <button  onClick={handleCheckout}
+          className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-grey-800 duration-300">
             proceed to checkout
           </button>
+
+          {payNow && (
+            <div className="w-full mt-6 flex items-center justify-center">
+              <StripeCheckout
+                stripeKey="pk_test_51NwOx1SINEXC0VfamXku4eFDprQoJRxK4uxvLmvAegXrLhxjGQVprQU0Zx9ATFp4E62rsB9YHZWK1xWmMh6q8Yk800ZE5zSfJT"
+                name="Fast Fashion Online Shopping"
+                amount={totalAmt * 100}
+                label="Pay to FastFashion"
+                description={`Your Payment amount is $${totalAmt}`}
+                token={payment}
+                email={userInfo.email}
+              />
+            </div>
+          )}
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
