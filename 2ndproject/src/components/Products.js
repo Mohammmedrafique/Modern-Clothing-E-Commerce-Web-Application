@@ -12,7 +12,8 @@ const products=({products})=>{
            </h1>
            <span className="w-20 h-[3px] bg-black"></span>
            <p className="max-w-[700px] text-gray-600 text-center">
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, quos fugit inventore, cumque quae corporis ratione tenetur eosvoluptates neque magnam soluta aperiam omnis perspiciatis reiciendis asperiores repudiandae assumenda quidem.
+          
+Discover the latest trends at lightning speed on Fast Fashion shop. Elevate your style with our fast fashion collection today!
            </p>
 
 

@@ -33,7 +33,7 @@ export const Login = () => {
         );
 
         setTimeout(() => {
-          navigate("/");
+          navigate(-1);
         }, 1500);
       })
       .catch((error) => {

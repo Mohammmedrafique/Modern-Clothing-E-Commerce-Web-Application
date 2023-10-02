@@ -20,23 +20,27 @@ const Header = () => {
 
         <div className="flex items-center gap-8">
           <ul className="flex items-center gap-8">
+            <Link to="/" >
             <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
               Home
             </li>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
+            </Link>
+            {/* <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
               Pages
-            </li>
+            </li> */}
             <Link to="/shop">
               <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
                 Shop
               </li>
             </Link>
-            <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
+            {/* <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
               Element
-            </li>
+            </li> */}
+            <Link to="/contact" >
             <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              Blog
+              Contact
             </li>
+            </Link>
           </ul>
           <Link to="/cart">
             <div className="relative">

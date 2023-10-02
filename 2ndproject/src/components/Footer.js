@@ -3,8 +3,8 @@ import React from "react";
 const footer = () => {
   return (
     <div>
-      <footer class="bg-white lg:grid lg:grid-cols-5">
-        <div class="relative block h-32 lg:col-span-2 lg:h-full">
+      <footer class="bg-black lg:grid lg:grid-cols-5">
+        <div class="relative block h-20 lg:col-span-2 lg:h-full">
           <img
             src="https://images.unsplash.com/photo-1642370324100-324b21fab3a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
             alt=""
@@ -16,19 +16,19 @@ const footer = () => {
           <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
               <p>
-                <span class="text-xs uppercase tracking-wide text-gray-500">
+                <span class="text-xs uppercase tracking-wide text-white">
                   Call us
                 </span>
 
                 <a
                   href="#"
-                  class="block text-2xl font-medium text-gray-900 hover:opacity-75 sm:text-3xl"
+                  class="block text-2xl font-medium text-white hover:opacity-75 sm:text-3xl"
                 >
                   0123456789
                 </a>
               </p>
 
-              <ul class="mt-8 space-y-1 text-sm text-gray-700">
+              <ul class="mt-8 space-y-1 text-sm text-white">
                 <li>Monday to Friday: 10am - 5pm</li>
                 <li>Weekend: 10am - 3pm</li>
               </ul>
@@ -39,7 +39,7 @@ const footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-gray-700 transition hover:opacity-75"
+                    class="text-white transition hover:opacity-75"
                   >
                     <span class="sr-only">Facebook</span>
 
@@ -63,7 +63,7 @@ const footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-gray-700 transition hover:opacity-75"
+                    class="text-white transition hover:opacity-75"
                   >
                     <span class="sr-only">Instagram</span>
 
@@ -87,7 +87,7 @@ const footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-gray-700 transition hover:opacity-75"
+                    class="text-white transition hover:opacity-75"
                   >
                     <span class="sr-only">Twitter</span>
 
@@ -107,7 +107,7 @@ const footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-gray-700 transition hover:opacity-75"
+                    class="text-white transition hover:opacity-75"
                   >
                     <span class="sr-only">GitHub</span>
 
@@ -131,7 +131,7 @@ const footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    class="text-gray-700 transition hover:opacity-75"
+                    class="text-white transition hover:opacity-75"
                   >
                     <span class="sr-only">Dribbble</span>
 
@@ -154,40 +154,40 @@ const footer = () => {
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <p class="font-medium text-gray-900">Services</p>
+                <p class="font-medium text-white">Category</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
-                      1on1 Coaching
+                      Men
                     </a>
                   </li>
 
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
-                      Company Review
+                      Women
                     </a>
                   </li>
 
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
-                      Accounts Review
+                      Kids
                     </a>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
                       HR Consulting
                     </a>
@@ -196,22 +196,22 @@ const footer = () => {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
                       SEO Optimisation
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
 
               <div>
-                <p class="font-medium text-gray-900">Company</p>
+                <p class="font-medium text-white">Company</p>
 
                 <ul class="mt-6 space-y-4 text-sm">
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
                       About
                     </a>
@@ -220,7 +220,7 @@ const footer = () => {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
                       Meet the Team
                     </a>
@@ -229,7 +229,7 @@ const footer = () => {
                   <li>
                     <a
                       href="#"
-                      class="text-gray-700 transition hover:opacity-75"
+                      class="text-white transition hover:opacity-75"
                     >
                       Accounts Review
                     </a>
@@ -243,26 +243,26 @@ const footer = () => {
             <div class="sm:flex sm:items-center sm:justify-between">
               <ul class="flex flex-wrap gap-4 text-xs">
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-white transition hover:opacity-75">
                     Terms & Conditions
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-white transition hover:opacity-75">
                     Privacy Policy
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="text-gray-500 transition hover:opacity-75">
+                  <a href="#" class="text-white transition hover:opacity-75">
                     Cookies
                   </a>
                 </li>
               </ul>
 
-              <p class="mt-8 text-xs text-gray-500 sm:mt-0">
-                &copy; 2022. Company Name. All rights reserved.
+              <p class="mt-8 text-xs text-white sm:mt-0">
+                &copy; 2023. Fast Fashion. All rights reserved.
               </p>
             </div>
           </div>
