@@ -6,6 +6,10 @@
 
   <h3 align="center">Fast Fashion E-commerce Shop</h3>
 
+  # Deployed Link
+
+[Netlify Deployed Link:  Sarthi Travel](https://sarthitravel.netlify.app/)
+
   <p align="center">
     The Fast-Fashion E-Commerce Store project is a collective effort by a talented team of five individuals. 
     <br/>
