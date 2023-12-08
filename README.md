@@ -8,7 +8,7 @@
 
   # Deployed Link
 
-[Netlify Deployed Link:  Sarthi Travel](https://sarthitravel.netlify.app/)
+[ Deployed Link:  Fast Fashion]( https://truculent-face-1803-nine.vercel.app/)
 
   <p align="center">
     The Fast-Fashion E-Commerce Store project is a collective effort by a talented team of five individuals. 
